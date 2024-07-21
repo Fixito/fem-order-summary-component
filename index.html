@@ -13,33 +13,49 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Order summary card</title>
+    <!-- normalize -->
+    <link rel="stylesheet" href="./normalize.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
-      <article class="card">
+      <article class="[ card ] [ bg-white text-center br-2 ]">
         <img
           src="./images/illustration-hero.svg"
           alt="An illustration of someone listenning music and dancing."
           class="card__img"
         />
-        <div class="card__content">
-          <h1>Order summary</h1>
-          <p>
+        <div
+          class="[ card__content ] [ grid-flow ] [ padding-24 padding-y-32 ]"
+        >
+          <h1>Order Summary</h1>
+          <p class="margin-top-16">
             You can now listen to millions of songs, audiobooks, and
             podcasts on any device anywhere you like!
           </p>
-          <div>
+          <div
+            class="[ flex-row ] [ bg-neutral-200 text-start br-1 margin-y-24 padding-16 ]"
+          >
             <div>
               <img src="./images/icon-music.svg" alt="" />
             </div>
             <div>
-              <p>Anuual Plan</p>
-              <p>$59.99/year</p>
+              <p class="text-neutral-900 fw-black fs-sm">
+                Annual Plan
+              </p>
+              <p class="fs-sm">$59.99/year</p>
             </div>
-            <button>Change</button>
+            <button class="[ link ] [ push-right fs-xs ]">
+              Change
+            </button>
           </div>
-          <button>Proceed to Payment</button>
-          <button>Cancel Order</button>
+          <button class="btn" data-type="primary">
+            Proceed to Payment
+          </button>
+          <button class="[ btn ] [ margin-top-24 ]" data-type="naked">
+            Cancel Order
+          </button>
         </div>
       </article>
     </main>

@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+  /* colors */
+  --clr-primary-50: #e0e8ff;
+  --clr-primary-100: #d6e1ff;
+  --clr-primary-200: #6b8eff;
+  --clr-primary-300: #756af1;
+  --clr-primary-400: #3829e0;
+
+  /* grey */
+  --clr-neutral-200: #f5f7ff;
+  --clr-neutral-300: #dfe6fb;
+  --clr-neutral-400: #717fa6;
+
+  /* rest of colors */
+  --clr-black: hsl(345, 6%, 13%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* typography */
+  --ff-regular: 'Red Hat Display', sans-serif;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 0.9375rem;
+  --fs-md: 1rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  /* rest of vars */
+  --rounded-xl: 0.6875rem;
+  --rounded-2xl: 1.25rem;
+  --shadow: 0 40 40 0 rgb(13 48 189 / 15.18%);
+  --shadow-btn: 0 20px 20px 0 rgb(56 42 225 / 19.03%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+p {
+  margin-block: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.67;
+  font-family: var(--ff-regular);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--clr-neutral-400);
+  background-color: var(--clr-primary-50);
+  padding-inline: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+button {
+  line-height: 1;
+}
+
+h1 {
+  text-wrap: balance;
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-black);
+  color: var(--clr-black);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-inline-size: 100%;
+  display: block;
+}
+
+/* Inherit fonts for buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* composition */
+.grid-flow {
+  display: grid;
+  gap: var(--gap, 0);
+}
+
+.flex-row {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+/* utility */
+.margin-top-16 {
+  margin-block-start: 1rem;
+}
+
+.margin-top-24 {
+  margin-block-start: 1.5rem;
+}
+
+.margin-y-24 {
+  margin-block: 1.5rem;
+}
+
+.padding-16 {
+  padding: 1rem;
+}
+
+.padding-24 {
+  padding: 1.5rem;
+}
+
+.padding-y-32 {
+  padding-block: 2rem;
+}
+
+.padding-48 {
+  padding: 3rem;
+}
+
+.text-neutral-900 {
+  color: var(--clr-black);
+}
+
+.text-neutral-400 {
+  color: var(--clr-neutral-400);
+}
+
+.bg-white {
+  background-color: var(--clr-white);
+}
+
+.bg-neutral-200 {
+  background-color: var(--clr-neutral-200);
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.fs-xs {
+  font-size: var(--fs-xs);
+}
+
+.fs-sm {
+  font-size: var(--fs-sm);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.fw-black {
+  font-weight: var(--fw-black);
+}
+
+.br-1 {
+  border-radius: var(--rounded-xl);
+}
+
+.br-2 {
+  border-radius: var(--rounded-2xl);
+}
+
+.push-right {
+  margin-inline-start: auto;
+}
+
+a,
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-bold);
+}
+
+a:hover,
+a:focus,
+.link:hover,
+.link:focus {
+  color: var(--clr-primary-300);
+  text-decoration: none;
+}
+
+/* Block */
+.card {
+  overflow: hidden;
+  max-inline-size: 450px;
+  box-shadow: var(--shadow);
+}
+
+.btn {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1em 2em;
+  border: transparent;
+  border-radius: var(--rounded-xl);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+  background-color: transparent;
+}
+
+.btn[data-type='primary'] {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-white);
+}
+
+.btn[data-type='primary']:hover,
+.btn[data-type='primary']:focus {
+  background-color: var(--clr-primary-300);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn[data-type='naked'] {
+  color: var(--clr-neutral-400);
+  padding: 0;
+}
+
+.btn[data-type='naked']:hover,
+.btn[data-type='naked']:focus {
+  color: var(--clr-black);
+}
+
+@media screen {
+  h1 {
+    font-size: var(--fs-2xl);
+  }
+
+  .card__content p {
+    font-size: var(--fs-base);
+  }
+
+  .link {
+    font-size: var(--fs-sm);
+  }
+}
